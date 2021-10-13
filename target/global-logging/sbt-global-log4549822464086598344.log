@@ -1,0 +1,15 @@
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(testOnly Datapath.AluTest, Some(7cacb194-69ec-4715-b3e2-c7d26b23bcea), Some(CommandSource(console0)))[0m
+[0m[[0m[0mdebug[0m] [0m[0mEvaluating tasks: Test / testOnly[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning task... Cancel: Signal, check cycles: false, forcegc: true[0m
+[0m[[0m[0minfo[0m] [0m[0mcompiling 16 Scala sources to C:\Users\Saad\OneDrive\Desktop\Awwad-Core\target\scala-2.12\classes ...[0m
+[0m[[0m[0minfo[0m] [0m[0mcompiling 14 Scala sources to C:\Users\Saad\OneDrive\Desktop\Awwad-Core\target\scala-2.12\test-classes ...[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mAluTest:[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- ALU Test[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[36mRun completed in 4 seconds, 857 milliseconds.[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[36mTotal number of tests run: 1[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[36mSuites: completed 1, aborted 0[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[36mTests: succeeded 1, failed 0, canceled 0, ignored 0, pending 0[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mAll tests passed.[0m[0m
+[0m[[0m[32msuccess[0m] [0m[0mTotal time: 31 s, completed Oct 13, 2021 9:10:02 PM[0m
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(shell, None, None)[0m
+[0m[[0m[31merror[0m] [0m[0mserver failed to start on local:sbt-server-e4cccaee14d4604342a0. java.io.IOException: Could not create lock for \\.\pipe\sbt-server-e4cccaee14d4604342a0_lock, error 5[0m
