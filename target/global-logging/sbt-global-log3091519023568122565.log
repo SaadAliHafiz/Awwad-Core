@@ -11,3 +11,4 @@
 [0m[[0m[32msuccess[0m] [0m[0mTotal time: 10 s, completed Oct 13, 2021 4:34:26 PM[0m
 [0m[[0m[0mdebug[0m] [0m[0m> Exec(shell, None, None)[0m
 [0m[[0m[31merror[0m] [0m[0mserver failed to start on local:sbt-server-e4cccaee14d4604342a0. java.io.IOException: Could not create lock for \\.\pipe\sbt-server-e4cccaee14d4604342a0_lock, error 5[0m
+[0m[[0m[0mdebug[0m] [0m[0mForcing garbage collection...[0m

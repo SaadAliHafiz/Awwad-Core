@@ -7,12 +7,12 @@ class Alu_Control_IO(width: Int) extends Bundle {
 
 	val Aluop = Input(UInt(width.W))
 	val func7 = Input(Bool())
-	val func3 = Input(UInt(width.W))
+	val func3 = Input(UInt(3.W))
 	val control = Output(UInt(5.W))
 
 }
 
-class AluControl(width_parameter: Int) extends Module{
+class AluControl extends Module with Config{
 
 	val io = IO(new Alu_Control_IO(width_parameter))
 
@@ -41,7 +41,7 @@ class AluControl(width_parameter: Int) extends Module{
 
 		// Branch
 
-		(io.Aluop === "b010".U) -> Cat("b010".U , io.func3),
+		(io.Aluop === 2.U) -> Cat("b010".U , io.func3),
 
 		//JALR , JAL
 

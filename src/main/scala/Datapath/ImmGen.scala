@@ -3,34 +3,41 @@ package Datapath
 import chisel3._
 import chisel3.util._
 
-class Imm_Gen_IO[T <: Data](uInt: T, sInt: T) extends Bundle {
-	val instr = Input(uInt)
-	val immd_se = Output(sInt)
-    val pc = Input(uInt)
+class ImmGenIO(inType:UInt, outType:SInt) extends Bundle{
+
+	val instr = Input(inType)
+	val pc = Input(inType)
+	val s_imm = Output(outType)
+	val sb_imm = Output(outType)
+	val uj_imm = Output(outType)
+	val u_imm = Output(outType)
+	val i_imm = Output(outType)
+
 }
 
-class ImmGen(sizeUint:UInt,sizeSint:SInt) extends Module {
+class ImmGen extends Module with Config {
 
-	val io = IO(new Imm_Gen_IO(sizeUint:UInt, sizeSint:SInt))
+ 	val io = IO (new ImmGenIO(immInType, immOutType))
+
+	//S
+	val s_imm13 = Cat (io.instr(31,25),io.instr(11,7))
+	io.s_imm := (Cat(Fill(20,s_imm13(11)),s_imm13)).asSInt
+
+	//SB
+	val sb_imm13 = Cat (io.instr(31),io.instr(7),io.instr(30,25),io.instr(11,8),"b0".U)
+	io.sb_imm := ((Cat(Fill(19,sb_imm13(12)),sb_imm13)) + io.pc).asSInt
+
+	//UJ
+	val uj_imm21 = Cat (io.instr(31),io.instr(19,12),io.instr(20),io.instr(30,21),"b0".U)
+	io.uj_imm := ((Cat(Fill(12,uj_imm21(20)),uj_imm21)) + io.pc).asSInt
+
+	//U
+	io.u_imm := ((Cat(Fill(12,io.instr(31)),io.instr(31,12))) << 12).asSInt
 	
-	io.immd_se := 0.S
+	//I
+	val sbt1 = io.instr(31,20)
+	val output = Cat(Fill(19,sbt1(11)),sbt1)
+	val output1 = output.asSInt 
+	io.i_imm := output1
 
-	when(io.instr(6,0)==="b0100011".U){                 //S_Immediate
-		io.immd_se := (Cat(Fill(20,io.instr(31)),io.instr(31,25),io.instr(11,7))).asSInt
-	}
-    
-    .elsewhen(io.instr(6,0)==="b0010111".U){              //U_Immediate
-		io.immd_se := (Cat(io.instr(31),io.instr(30,25),io.instr(24,21),io.instr(20),io.instr(19,12)) << 12.U).asSInt
-	}
-    
-    .elsewhen(io.instr(6,0)==="b0010011".U){            //I_Immediate
-		io.immd_se := (Cat(Fill(20,io.instr(31)),io.instr(31,20))).asSInt
-	}
-    
-    .elsewhen(io.instr(6,0)==="b1100011".U){           //SB_Immediate
-		io.immd_se := (Cat(Fill(19,io.instr(31)),io.instr(31),io.instr(7),io.instr(30,25),io.instr(11,8), 0.U)+io.pc.asUInt).asSInt
-	}
-    
-    .elsewhen(io.instr(6,0)==="b1101111".U){      //UJ_Immediate
-		io.immd_se := (Cat(Fill(11,io.instr(31)),io.instr(31),io.instr(19,12),io.instr(20),io.instr(30,25),io.instr(24,21), 0.U)).asSInt	}
 }

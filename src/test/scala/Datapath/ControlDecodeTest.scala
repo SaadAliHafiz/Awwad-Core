@@ -1,11 +1,15 @@
 package Datapath
+
 import org.scalatest._
 import chiseltest._
 import chisel3._
-class controldecodeTest extends FreeSpec with ChiselScalatestTester{
+
+class ControlDecodeTest extends FreeSpec with ChiselScalatestTester{
     
-    "control decode Test" in {
-        test(new CD()){c=>
+    "Control Decode Test" in {
+
+        test(new ControlDecode) { c=>
+        
         c.io.RType.poke(0.B)
         c.io.IType.poke(0.B)
         c.io.Lui .poke(0.B)
@@ -14,10 +18,9 @@ class controldecodeTest extends FreeSpec with ChiselScalatestTester{
         c.io.Load.poke(0.B)
         c.io.Store.poke(0.B)
         c.io.SBType.poke(0.B)
-        // c.io.auipc_type.poke(0.B)
-        // c.io.bnew_type.poke(0.B)
-        c.clock.step(20)
-        //-----------------------
+    
+        c.clock.step(20) 
+
         c.io.Branch.expect(0.B)
         c.io.RegWrite.expect(1.B)
         c.io.Operand_bSel.expect(0.B)
@@ -29,8 +32,6 @@ class controldecodeTest extends FreeSpec with ChiselScalatestTester{
         c.io.AluOp.expect("b011".U) 
         c.io.Operand_aSel.expect("b10".U)
 
-
         }
-
     }
 }

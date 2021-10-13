@@ -23,12 +23,37 @@ trait Config {
     val datatype = UInt
     val AWLEN = 10
     val nRows = math.pow(2,AWLEN).toInt
-    val initFile = "src/main/scala/RV32ISingleCycleDatapath/Datapath/instrFile.txt"
-    val opCodeWidth=UInt(7.W)
+    val initFile = "src/main/scala/Datapath/instrFile.txt"
 
-    //ALU
+// Type Decode
+
+    val opCodeWidth = UInt(7.W)
+
+//  Alu
+
+    val in_out_Width = 32
+    val AluCtrl = 5
+
+//  Imm Gen
+
+    val immOutType = SInt(32.W)
+    val immInType = UInt(32.W)
+
+//Alu COntrol
+    val width_parameter=32
+
+//DataMemory
     
-    val in_out_Width=32
-    val AluCtrl=5
+    
+//Jal
+    val size=SInt(32.W)
 
+//Pc
+    val sizePc=UInt(32.W)
+// Data Memory
+
+    val addrType = UInt(32.W)
+    val dataType = SInt(32.W)
+    val memWidth = 32
+    val rows = 1024
 }

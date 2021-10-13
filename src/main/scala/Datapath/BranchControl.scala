@@ -9,7 +9,7 @@ class Branch_Control_IO[T <: Data]( width : T ) extends Bundle {
     val branch = Input(Bool())
     val arg_x = Input(width)
     val arg_y = Input(width)
-    val br_taken = Output(Bool())
+    val br_taken = Output(Bool()) //bNew
 }
 
 class BranchControl(size:UInt) extends Module {

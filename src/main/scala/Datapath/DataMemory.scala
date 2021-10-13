@@ -3,28 +3,27 @@ package Datapath
 import chisel3._
 import chisel3.util._
 
-class Parameters(dWidth: Int, aWidth: Int) extends Bundle {
-    
-    val addrWidth = UInt(aWidth.W)
-    val dataWidth = UInt(dWidth.W)
 
+
+class DataMemIO(address: UInt, data:SInt) extends Bundle{
+
+    val data_in = Input(data)
+    val data_out = Output(data)
+    val addr = Input(address)
+    val wr_en = Input(Bool())
+    val rd_en = Input(Bool())
 }
 
-class DataMem(params: Parameters) extends Module {
+class DataMem extends Module with Config{
     
-    val io = IO(new Bundle{
-
-        val data_in = Input(params.dataWidth)
-        val data_out = Output(params.dataWidth)
-        val addr = Input(params.addrWidth)
-        val wr_en = Input(Bool())
-
-    })
+    val io = IO(new DataMemIO(addrType, dataType))
 
     // Make memory of 32 x 32
 
-    val memory = Mem(32, params.dataWidth)
-    io.data_out := 0.U
+    val memory = Mem(1024, dataType)
+
+
+    io.data_out := 0.S
 
     when (io.wr_en) {
 
@@ -32,12 +31,11 @@ class DataMem(params: Parameters) extends Module {
 
     } 
     
-    .otherwise {
-        
+    when (io.rd_en) {
         io.data_out := memory.read(io.addr)
-    
+    }
+
+    .otherwise {
+        io.data_out := DontCare
     }
 }
-
-
-

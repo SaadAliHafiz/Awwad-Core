@@ -9,7 +9,7 @@ class RegFileIO(addressWidth:UInt, dataWidth:SInt) extends Bundle{
     val rdata1 = Output(dataWidth)  // rs1
     val rdata2 = Output(dataWidth) // rs2
     
-    val wen = Input(Bool())
+    val regEn = Input(Bool())         
     val waddr = Input(addressWidth) // rdsel
     val wdata = Input(dataWidth) // rd
 
@@ -29,7 +29,7 @@ class RegFile extends Module with Config {
     io.rdata1 := Mux((io.raddr1.orR), regs(io.raddr1), 0.S)
     io.rdata2 := Mux((io.raddr2.orR), regs(io.raddr2), 0.S)
 
-    when (io.wen & io.waddr.orR) {
+    when (io.regEn & io.waddr.orR) {
         
         regs (io.waddr) := io.wdata
     

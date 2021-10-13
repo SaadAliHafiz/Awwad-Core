@@ -1,2 +1,25 @@
 [0m[[0m[0mdebug[0m] [0m[0mCreated transactional ClassFileManager with tempDir = C:\Users\Saad\OneDrive\Desktop\Awwad-Core\target\scala-2.12\test-classes.bak[0m
+[0m[[0m[0mdebug[0m] [0m[0mAbout to delete class files:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	AluTest.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	GCDSpec.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	controldecodeTest.class[0m
+[0m[[0m[0mdebug[0m] [0m[0mWe backup class files:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	AluTest.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	GCDSpec.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	controldecodeTest.class[0m
+[0m[[0m[0mdebug[0m] [0m[0mRegistering generated classes:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	AluTest.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	DataMemTest.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	PCTest.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	AluControlTest.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	ControlDecodeTest.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	InstructionMemoryTest.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	TypeDecodeTest.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	ControlTest.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	RegFileTest.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	TopFileTest.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	GCDSpec.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	ImmGenTest.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	JalrTest.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	BranchControlTest.class[0m
 [0m[[0m[0mdebug[0m] [0m[0mRemoving the temporary directory used for backing up class files: C:\Users\Saad\OneDrive\Desktop\Awwad-Core\target\scala-2.12\test-classes.bak[0m

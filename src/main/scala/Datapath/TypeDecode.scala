@@ -1,3 +1,4 @@
+
 package Datapath
 
 import chisel3._
@@ -86,8 +87,7 @@ class TypeDecode extends Module with Config {
 // 	})
 	
 //     // val Seq(io.rType, io.load, io.store, io.branch, io.iType, io.jalrType, io.jalType, io.luiType) := Seq.fill(8)(0.S)}
-//     Seq(io.rType, io.load, io.store, io.bType, io.iType, io.jalr, io.jal, io.lui,io.auipc,io.bOut) map (_ := 0.B)
-
+//     Seq(io.rType, io.load, io.store, io.bType
 // 	// io.rType := 0.S
 // 	// io.load := 0.S
 // 	// io.store := 0.S
@@ -137,3 +137,4 @@ class TypeDecode extends Module with Config {
 // 		io.bOut:=1.B
 // 	}
 // }
+
