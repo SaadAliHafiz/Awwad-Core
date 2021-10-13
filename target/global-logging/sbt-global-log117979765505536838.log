@@ -1,0 +1,12 @@
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(testOnly Datapath.AluTest, Some(a15d7e23-41c5-48d5-a68f-303a03b044b5), Some(CommandSource(console0)))[0m
+[0m[[0m[0mdebug[0m] [0m[0mEvaluating tasks: Test / testOnly[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning task... Cancel: Signal, check cycles: false, forcegc: true[0m
+[0m[[0m[0minfo[0m] [0m[0mcompiling 1 Scala source to C:\Users\Saad\OneDrive\Desktop\Awwad-Core\target\scala-2.12\test-classes ...[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\Saad\OneDrive\Desktop\Awwad-Core\src\test\scala\Datapath\ControlTest.scala:11:18: not found: type Control[0m
+[0m[[0m[31merror[0m] [0m[0m        test(new Control) {c =>[0m
+[0m[[0m[31merror[0m] [0m[0m                 ^[0m
+[0m[[0m[31merror[0m] [0m[0mone error found[0m
+[0m[[0m[31merror[0m] [0m[0m(Test / [31mcompileIncremental[0m) Compilation failed[0m
+[0m[[0m[31merror[0m] [0m[0mTotal time: 1 s, completed Oct 13, 2021 4:34:11 PM[0m
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(shell, None, None)[0m
+[0m[[0m[31merror[0m] [0m[0mserver failed to start on local:sbt-server-e4cccaee14d4604342a0. java.io.IOException: Could not create lock for \\.\pipe\sbt-server-e4cccaee14d4604342a0_lock, error 5[0m
