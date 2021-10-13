@@ -1,4 +1,6 @@
-[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(Datapath.AluTest, org.scalatest.tools.Framework$$anon$1@2d72472c, false, [SuiteSelector])[0m
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(testOnly Datapath.AluTest, Some(cf47f2d3-ee03-4b74-a225-3a4c0ae4f48c), Some(CommandSource(console0)))[0m
+[0m[[0m[0mdebug[0m] [0m[0mEvaluating tasks: Test / testOnly[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning task... Cancel: Signal, check cycles: false, forcegc: true[0m
 [0m[[0m[0minfo[0m] [0m[0m[32mAluTest:[0m[0m
 [0m[[0m[0minfo[0m] [0m[0m[32m- ALU Test[0m[0m
 [0m[[0m[0minfo[0m] [0m[0m[36mRun completed in 4 seconds, 688 milliseconds.[0m[0m
@@ -6,5 +8,5 @@
 [0m[[0m[0minfo[0m] [0m[0m[36mSuites: completed 1, aborted 0[0m[0m
 [0m[[0m[0minfo[0m] [0m[0m[36mTests: succeeded 1, failed 0, canceled 0, ignored 0, pending 0[0m[0m
 [0m[[0m[0minfo[0m] [0m[0m[32mAll tests passed.[0m[0m
-[0m[[0m[0mdebug[0m] [0m[0mPassed tests:[0m
-[0m[[0m[0mdebug[0m] [0m[0m	Datapath.AluTest[0m
+[0m[[0m[32msuccess[0m] [0m[0mTotal time: 9 s, completed Oct 13, 2021 9:15:15 PM[0m
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(shell, None, None)[0m
