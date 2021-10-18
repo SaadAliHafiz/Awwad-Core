@@ -7,7 +7,7 @@ I'm in my senior year currently pursuing bachelors in software engineering at [U
 
 ### First of all get started by Cloning this repository in your machine
 ```ruby
-https://github.com/SaadAliHafiz/Riscv-Single-Cycle-Cores.git
+https://github.com/SaadAliHafiz/Awwad-Core.git
 ```
 
 ### Navigate to ***Awwad-Core*** directory as
